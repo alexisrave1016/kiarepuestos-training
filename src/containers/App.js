@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Ejercicios from '../components/Ejercicios'
 import Formulario from '../components/Formulario';
+import FromHook from '../components/FromHook';
 
 export const App = () => {
-  const temperatura= 2;
   
   const [numero, setnumero] = useState(0);
   const aumentar=()=>{
@@ -14,6 +14,7 @@ export const App = () => {
     console.log('me quitaste un link')
     setnumero(numero -1)
   };
+  const temperatura= numero;
   return (
     <div>
       <Ejercicios/>
@@ -24,6 +25,7 @@ export const App = () => {
         {temperatura > 20 ? 'mucho calor' : 'esta haciendo un poco de frio'}
       </h1>
       <Formulario/>
+      <FromHook/>
     </div>
   )
 }

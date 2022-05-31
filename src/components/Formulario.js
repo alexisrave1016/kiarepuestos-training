@@ -21,15 +21,14 @@ export default function Formulario() {
     const enviarDatos= (e)=>{
         e.preventDefault();
         console.log(cotizacion.Nombre + ''+ cotizacion.Telefono)
-        console.log('estoy enviando')
     }
     
 
   return (
-    <Fragment className='Cotizaciones-contenedor'>
+    <div className='Cotizaciones-contenedor'>
         <h1>Cotizacion</h1>
-        <from className="formulario" >
-            <label>
+        <form className="formulario" onSubmit={enviarDatos}>
+        
             <input
             placeholder='Ingreso Nombre'
             className='caja-datos'
@@ -37,9 +36,7 @@ export default function Formulario() {
             name='Nombre'
             onChange={handleInputChange}
             />
-            </label>
-
-            <label>
+            
             <input
             placeholder='Telefono'
             className='caja-datos'
@@ -47,9 +44,7 @@ export default function Formulario() {
             name='Telefono'
             onChange={handleInputChange}
             />
-            </label>
             
-            <label>
             <input
             placeholder='Email'
             className='caja-datos'
@@ -57,23 +52,20 @@ export default function Formulario() {
             name='Email'
             onChange={handleInputChange}
             />
-            </label>
             
-            <label>
             <input
             placeholder='Consulta'
             className='caja-datos'
             name='Consulta'
             onChange={handleInputChange}
             />
-            </label>
-
-            <button type='submit' onClick={enviarDatos}>Enviar</button>
+        
+            <button type='submit' >Enviar</button>
             
-        </from>
+        </form>
 
         <h2>{cotizacion.Nombre} y tu telefono es {cotizacion.Telefono}</h2>
 
-    </Fragment>
+    </div>
   )
 }
